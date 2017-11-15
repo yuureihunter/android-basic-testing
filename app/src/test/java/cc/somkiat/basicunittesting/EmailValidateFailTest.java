@@ -24,10 +24,10 @@ public class EmailValidateFailTest {
         assertFalse(result.getMessage(), result.isValid());
     }
 
-//    @Test
-//    public void emailIsMissingUserName(){
-//        EmailValidator emailValidator = new EmailValidator();
-//        ValidateResult result = emailValidator.validate("@mail.com");
-//        assertFalse(result.getMessage(), result.isValid());
-//    }
+    @Test
+    public void emailIsMissingUserName(){
+        EmailValidator emailValidator = new EmailValidator();
+        ValidateResult result = emailValidator.validate("@mail.com");
+        assertFalse(result.getMessage(), result.isValid());
+    }
 }

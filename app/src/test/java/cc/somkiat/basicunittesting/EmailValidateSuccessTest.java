@@ -7,9 +7,6 @@ import cc.somkiat.basicunittesting.validate.ValidateResult;
 
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by Pimpavee on 15/11/2560.
- */
 
 public class EmailValidateSuccessTest {
     @Test
