@@ -11,10 +11,17 @@ public class NameValidator {
         try {
             nameIsEmpty(name);
             nameIsNull(name);
+            nameIsNotAlphabet(name);
         }catch (Exception e){
             return new ValidateResult(false, e.getMessage());
         }
         return new ValidateResult(true, null);
+    }
+
+    private void nameIsNotAlphabet(String name) throws ValidateException {
+        if (!name.matches("^[ A-Za-z]+$")){
+            throw new ValidateException("Name is incorrect");
+        }
     }
 
     private void nameIsNull(String name) throws ValidateException {
