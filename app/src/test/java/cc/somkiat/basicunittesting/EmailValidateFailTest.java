@@ -10,7 +10,7 @@ import static org.junit.Assert.assertFalse;
 public class EmailValidateFailTest {
 
     @Test
-    public void emailIsEmpyt(){
+    public void emailIsEmpty(){
         EmailValidator emailValidator = new EmailValidator();
         ValidateResult result = emailValidator.validate("");
         assertFalse(result.getMessage(), result.isValid());

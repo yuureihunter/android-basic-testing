@@ -9,14 +9,23 @@ import cc.somkiat.basicunittesting.exception.ValidateException;
 public class NameValidator {
     public ValidateResult validate(String name) {
         try {
+
             nameIsEmpty(name);
             nameIsNull(name);
             nameIsNotAlphabet(name);
             nameLengthIsMoreThirty(name);
+            nameLengthIsLessTwo(name);
+
         }catch (Exception e){
             return new ValidateResult(false, e.getMessage());
         }
         return new ValidateResult(true, null);
+    }
+
+    private void nameLengthIsLessTwo(String name) throws ValidateException {
+        if (name.length() < 2){
+            throw new ValidateException("Name is Too Short");
+        }
     }
 
     private void nameLengthIsMoreThirty(String name) throws ValidateException {

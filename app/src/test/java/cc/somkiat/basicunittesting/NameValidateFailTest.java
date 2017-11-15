@@ -10,7 +10,7 @@ import static org.junit.Assert.assertFalse;
 public class NameValidateFailTest {
 
     @Test
-    public void nameIsEmapty(){
+    public void nameIsEmpty(){
         NameValidator nameValidator = new NameValidator();
         ValidateResult result = nameValidator.validate("");
         assertFalse(result.getMessage(), result.isValid());
@@ -34,6 +34,13 @@ public class NameValidateFailTest {
     public void nameIsTooLong(){
         NameValidator nameValidator = new NameValidator();
         ValidateResult result = nameValidator.validate("ThaiJapanKoreaAmericaItalyChinaFranceNeverLand");
+        assertFalse(result.getMessage(), result.isValid());
+    }
+
+    @Test
+    public void nameIsTooShort(){
+        NameValidator nameValidator = new NameValidator();
+        ValidateResult result = nameValidator.validate("T");
         assertFalse(result.getMessage(), result.isValid());
     }
 }
