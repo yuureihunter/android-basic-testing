@@ -37,4 +37,11 @@ public class EmailValidateFailTest {
         ValidateResult result = emailValidator.validate("testmail.com");
         assertFalse(result.getMessage(), result.isValid());
     }
+
+    @Test
+    public void emailIsMissingDomain(){
+        EmailValidator emailValidator = new EmailValidator();
+        ValidateResult result = emailValidator.validate("test@");
+        assertFalse(result.getMessage(), result.isValid());
+    }
 }
