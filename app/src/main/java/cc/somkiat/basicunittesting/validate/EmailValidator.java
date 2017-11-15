@@ -23,7 +23,7 @@ public class EmailValidator {
         String emailPattern = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
 
         if(!Pattern.matches(emailPattern, email)) {
-            throw new ValidateException("Email is Invalid");
+            throw new ValidateException("Email is Incorrect");
         }
     }
 
