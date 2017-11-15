@@ -12,10 +12,17 @@ public class NameValidator {
             nameIsEmpty(name);
             nameIsNull(name);
             nameIsNotAlphabet(name);
+            nameLengthIsMoreThirty(name);
         }catch (Exception e){
             return new ValidateResult(false, e.getMessage());
         }
         return new ValidateResult(true, null);
+    }
+
+    private void nameLengthIsMoreThirty(String name) throws ValidateException {
+        if (name.length() > 30){
+            throw new ValidateException("Name is Too Long");
+        }
     }
 
     private void nameIsNotAlphabet(String name) throws ValidateException {

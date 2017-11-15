@@ -29,4 +29,11 @@ public class NameValidateFailTest {
         ValidateResult result = nameValidator.validate("Tes1");
         assertFalse(result.getMessage(), result.isValid());
     }
+
+    @Test
+    public void nameIsTooLong(){
+        NameValidator nameValidator = new NameValidator();
+        ValidateResult result = nameValidator.validate("ThaiJapanKoreaAmericaItalyChinaFranceNeverLand");
+        assertFalse(result.getMessage(), result.isValid());
+    }
 }
