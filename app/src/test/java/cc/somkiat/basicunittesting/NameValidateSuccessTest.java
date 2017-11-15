@@ -15,4 +15,11 @@ public class NameValidateSuccessTest {
         ValidateResult result = nameValidator.validate("Test");
         assertTrue(result.getMessage(), result.isValid());
     }
+
+    @Test
+    public void nameIsAlphabet(){
+        NameValidator nameValidator = new NameValidator();
+        ValidateResult result = nameValidator.validate("TestDADtat True");
+        assertTrue(result.getMessage(), result.isValid());
+    }
 }
