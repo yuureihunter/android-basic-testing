@@ -7,13 +7,20 @@ import cc.somkiat.basicunittesting.exception.ValidateException;
  */
 
 public class NameValidator {
-    public ValidateResult vlidate(String name) {
+    public ValidateResult validate(String name) {
         try {
             nameIsEmpty(name);
+            nameIsNull(name);
         }catch (Exception e){
             return new ValidateResult(false, e.getMessage());
         }
         return new ValidateResult(true, null);
+    }
+
+    private void nameIsNull(String name) throws ValidateException {
+        if (name == null){
+            throw new ValidateException("Name is Null");
+        }
     }
 
     private void nameIsEmpty(String name) throws ValidateException {

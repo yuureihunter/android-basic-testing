@@ -12,7 +12,14 @@ public class NameValidateFailTest {
     @Test
     public void nameIsEmapty(){
         NameValidator nameValidator = new NameValidator();
-        ValidateResult result = nameValidator.vlidate("");
+        ValidateResult result = nameValidator.validate("");
+        assertFalse(result.getMessage(), result.isValid());
+    }
+
+    @Test
+    public void nameIsNull(){
+        NameValidator nameValidator = new NameValidator();
+        ValidateResult result = nameValidator.validate(null);
         assertFalse(result.getMessage(), result.isValid());
     }
 }
