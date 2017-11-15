@@ -15,4 +15,11 @@ public class EmailValidateSuccessTest {
         ValidateResult result = emailValidator.validate("test@mail.com");
         assertTrue(result.getMessage(), result.isValid());
     }
+
+    @Test
+    public void emailIsCorrect(){
+        EmailValidator emailValidator = new EmailValidator();
+        ValidateResult result = emailValidator.validate("success@mail.com");
+        assertTrue(result.getMessage(), result.isValid());
+    }
 }

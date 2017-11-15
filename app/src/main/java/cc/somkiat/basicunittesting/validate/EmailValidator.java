@@ -11,7 +11,7 @@ public class EmailValidator {
 
             emailIsEmpty(email);
             emailIsNull(email);
-            emailIsValid(email);
+            emailIsCorrect(email);
 
         }catch (Exception e){
             return new ValidateResult(false, e.getMessage());
@@ -19,7 +19,7 @@ public class EmailValidator {
         return new ValidateResult(true, null);
     }
 
-    private void emailIsValid(String email) throws ValidateException {
+    private void emailIsCorrect(String email) throws ValidateException {
         String emailPattern = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
 
         if(!Pattern.matches(emailPattern, email)) {
