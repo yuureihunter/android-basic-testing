@@ -30,4 +30,11 @@ public class EmailValidateFailTest {
         ValidateResult result = emailValidator.validate("@mail.com");
         assertFalse(result.getMessage(), result.isValid());
     }
+
+    @Test
+    public void emailIsMissingAtSign(){
+        EmailValidator emailValidator = new EmailValidator();
+        ValidateResult result = emailValidator.validate("testmail.com");
+        assertFalse(result.getMessage(), result.isValid());
+    }
 }
