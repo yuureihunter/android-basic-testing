@@ -10,7 +10,6 @@ public class EmailValidator {
         try {
 
             emailIsEmpty(email);
-            emailIsNull(email);
             emailIsCorrect(email);
 
         }catch (Exception e){
@@ -24,12 +23,6 @@ public class EmailValidator {
 
         if(!Pattern.matches(emailPattern, email)) {
             throw new ValidateException("Email is Incorrect");
-        }
-    }
-
-    private void emailIsNull(String email) throws ValidateException {
-        if (email == null){
-            throw new ValidateException("Email is Null");
         }
     }
 

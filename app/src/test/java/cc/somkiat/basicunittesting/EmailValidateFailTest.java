@@ -18,13 +18,6 @@ public class EmailValidateFailTest {
     }
 
     @Test
-    public void  emailIsNull(){
-        EmailValidator emailValidator = new EmailValidator();
-        ValidateResult result = emailValidator.validate(null);
-        assertFalse(result.getMessage(), result.isValid());
-    }
-
-    @Test
     public void emailIsMissingUserName(){
         EmailValidator emailValidator = new EmailValidator();
         ValidateResult result = emailValidator.validate("@mail.com");

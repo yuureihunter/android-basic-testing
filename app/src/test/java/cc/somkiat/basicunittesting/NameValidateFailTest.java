@@ -17,13 +17,6 @@ public class NameValidateFailTest {
     }
 
     @Test
-    public void nameIsNull(){
-        NameValidator nameValidator = new NameValidator();
-        ValidateResult result = nameValidator.validate(null);
-        assertFalse(result.getMessage(), result.isValid());
-    }
-
-    @Test
     public void nameIsNotAlphabet(){
         NameValidator nameValidator = new NameValidator();
         ValidateResult result = nameValidator.validate("Tes1");

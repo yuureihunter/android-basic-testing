@@ -11,7 +11,6 @@ public class NameValidator {
         try {
 
             nameIsEmpty(name);
-            nameIsNull(name);
             nameIsNotAlphabet(name);
             nameLengthIsMoreThirty(name);
             nameLengthIsLessTwo(name);
@@ -40,11 +39,7 @@ public class NameValidator {
         }
     }
 
-    private void nameIsNull(String name) throws ValidateException {
-        if (name == null){
-            throw new ValidateException("Name is Null");
-        }
-    }
+
 
     private void nameIsEmpty(String name) throws ValidateException {
         if (name.isEmpty()){
